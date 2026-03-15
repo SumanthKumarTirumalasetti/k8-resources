@@ -1,4 +1,4 @@
-kind: service
+kind: Service
 apiVersion: v1
 metadata:
   name: nginx
@@ -18,11 +18,11 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: backend
-spec:
-  containers:
-  - name: nginx
-    image: nginx
   labels:
     project: expense
     component: backend
     environment: dev
+spec:
+  containers:
+  - name: nginx
+    image: nginx
