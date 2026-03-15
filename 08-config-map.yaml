@@ -1,0 +1,8 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: configmap
+data:
+  course: "kubernetes"
+  duration: "25hrs"
+
