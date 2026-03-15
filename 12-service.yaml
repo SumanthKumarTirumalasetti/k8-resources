@@ -9,7 +9,7 @@ spec:
     component: backend
     environment: dev
   ports:
-    sourceport: 80
+  - sourceport: 80
     targetport: 80
 
 ---
