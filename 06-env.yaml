@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: environement
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    env:
+    - name: course
+      value: Devops
+    - name: trainer
+      value: Siva
+    - name: duration\
+      value: "120HRS"
