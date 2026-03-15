@@ -9,7 +9,7 @@ spec:
     component: backend
     environment: dev
   ports:
-  - protocal: tcp
+  - protocol: tcp
     port: 80
     targetPort: 80
     nodePort: 30000
