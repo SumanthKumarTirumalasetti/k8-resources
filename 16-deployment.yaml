@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: sumanth7696/deployment:1.0.00
+        image: sumanth7696/deployment
         ports:
         - containerPort: 80
 
