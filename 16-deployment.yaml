@@ -10,10 +10,10 @@ metadata:
 spec:
   replicas: 3
   selector:
-  matchLabels:
-    app: nginx
-    tier: frontend
-    purpose: deployment
+    matchLabels:
+      app: nginx
+      tier: frontend
+      purpose: deployment
 
   template:
     metadata:
