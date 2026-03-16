@@ -1,7 +1,7 @@
 kind: ReplicaSet
 apiVersion: apps/v1
 metadata:
-  name: Replicaset
+  name: nginx
   labels:
     app: frontend
     tier: web
