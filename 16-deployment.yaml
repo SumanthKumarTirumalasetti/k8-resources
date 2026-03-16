@@ -1,0 +1,48 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+    tier: frontend
+    purpose: deployment
+  
+spec:
+  replicas: 3
+  selector:
+  matchLabels:
+    app: nginx
+    tier: frontend
+    purpose: deployment
+
+  template:
+    metadata:
+      labels:
+        app: nginx
+        tier: frontend
+        purpose: deployment
+    spec:
+      containers:
+      - name: frontend
+        image: sumanth7696/deployment:1.0.00
+        ports:
+        - containerPort: 80
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: frontend
+spec:
+  type: LoadBalancer
+  selector:
+    app: nginx
+    tier: frontend
+    purpose: deployment
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 30000
+
