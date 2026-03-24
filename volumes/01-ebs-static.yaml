@@ -30,6 +30,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: ebs-static
+  labels:
+    project: ebs-static
 spec:
   nodeSelector:
     topology.kubernetes.io/zone: us-east-1a
@@ -43,3 +45,17 @@ spec:
   - name: persistent-storage
     persistentVolumeClaim:
       claimName: ebs-static
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-LoadBalancer
+spec:
+  type: LoadBalancer
+  selector:
+    project: ebs-static
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+    nodePort: 30000
